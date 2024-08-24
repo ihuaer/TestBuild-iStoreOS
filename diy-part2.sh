@@ -34,11 +34,12 @@ function git_sparse_clone() {
 # 添加额外插件
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
+# git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-passwall
+# git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-filebrowser filebrowser
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin luci-lib-taskd
+# git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin luci-lib-taskd
 
 # 加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
@@ -66,6 +67,9 @@ CONFIG_VMDK_IMAGES=y
 # openclash
 CONFIG_PACKAGE_luci-app-openclash=y
 
+# passwall
+CONFIG_PACKAGE_luci-app-passwall=y
+
 # adguardhome
 CONFIG_PACKAGE_luci-app-adguardhome=y
 
@@ -73,25 +77,25 @@ CONFIG_PACKAGE_luci-app-adguardhome=y
 CONFIG_PACKAGE_luci-app-mosdns=y
 
 # pushbot
-CONFIG_PACKAGE_luci-app-pushbot=y
+# CONFIG_PACKAGE_luci-app-pushbot=y
 
 # Jellyfin
-CONFIG_PACKAGE_luci-app-jellyfin=y
+# CONFIG_PACKAGE_luci-app-jellyfin=y
 
 # qbittorrent
-CONFIG_PACKAGE_luci-app-qbittorrent=y
+# CONFIG_PACKAGE_luci-app-qbittorrent=y
 
 # transmission
-CONFIG_PACKAGE_luci-app-transmission=y
-CONFIG_PACKAGE_transmission-web-control=y
+# CONFIG_PACKAGE_luci-app-transmission=y
+# CONFIG_PACKAGE_transmission-web-control=y
 
 # uhttpd
 #CONFIG_PACKAGE_luci-app-uhttpd=y
 
 # 阿里DDNS
-CONFIG_PACKAGE_luci-app-aliddns=y
+# CONFIG_PACKAGE_luci-app-aliddns=y
 
 # filebrowser
-CONFIG_PACKAGE_luci-app-filebrowser=y
+# CONFIG_PACKAGE_luci-app-filebrowser=y
 
 " >> .config
